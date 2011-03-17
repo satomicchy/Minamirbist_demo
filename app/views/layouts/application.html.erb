@@ -1,14 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!--
+'A Leaf' design by Greg Smith - http://gregdev.net
+Please leave the 'designed by' link intact and visible; that's all I ask!
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <title>Minamirbist</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />	
+	<title>Minamirbist</title>
+	<%= stylesheet_link_tag "scaffold" %>
+	<%= javascript_include_tag :defaults %>
+	<%= csrf_meta_tag %>
 </head>
 <body>
-
+	<div id="wrap">
+	<div id="title">
+		<h1><%= link_to 'Minamirbist', members_path(@member) %></h1>
+	</div>
+	<div id="side">
+		<ul>
+			<li><%= link_to 'Member', members_path(@member) , :class =>"item" %></li>
+				<li><%= link_to 'new member', new_member_path , :class =>"itemsub" %></li>
+			<li><%= link_to 'Event', events_path(@event) , :class =>"item" %></li>
+				<li><%= link_to 'new event', new_event_path , :class =>"itemsub" %></li>
+			<li><%#= link_to 'Agreement', agreement_index_path , :class =>"item" %></li>
+				<li><%#= link_to 'log in', new_user_path , :class =>"itemsub" %></li>
+				<li><%#= link_to 'log out', destroy_user_session_path , :class =>"itemsub" %></li>
+		</ul>
+	</div>
+	<div id="content">
 <%= yield %>
+	</div>
+	<div id="footer"></div>
+	</div>
+	<div id="bottom">
+		<p>&copy; 2010 Minami.rb</p>
+		<p><a href="http://gregdev.net">Origial designed by Greg Smith</a></p>
+		<p><a href="http://shimizumari.com/fuwa2li">Matelial is from ふわふわ。り</a></p>
+	</div>
+
+<div style="font-size: 0.8em; text-align: center; margin-top: 1.0em; margin-bottom: 1.0em;">
+Design downloaded from <a href="http://www.freewebtemplates.com/">Free Templates</a> - your source for free web templates
+</div>
+
 
 </body>
 </html>
